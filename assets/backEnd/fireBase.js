@@ -59,10 +59,10 @@
 
           });  
 
-          // $("#nameofTrain").reset();
-          // $("#destination").reset();
-          // $("#arrivalTime").reset();
-          // $("#frequency").reset();
+          $("#nameofTrain").val('');
+          $("#destination").val('');
+          $("#arrivalTime").val('');
+          $("#frequency").val('')
 
         });
 
@@ -81,7 +81,7 @@
           let dest = $("<td>");
           let arriv = $("<td>");
           let freq = $("<td>");
-          let nextT = $("<td>");
+          let nextTill = $("<td>");
 
           // Assumptions
     let trainFrequency = snap.frequency;
@@ -115,14 +115,14 @@
 
     name =  name.text(snap.tripName);
     dest = dest.text(snap.destination);
-    arriv = arriv.text(snap.arrivalTime);
+    arriv = arriv.text(moment(nextTrain).format("hh:mm"));
     freq = freq.text(snap.frequency);
-    nextT = nextT.text(minutesTillTrain);
+    nextTill = nextTill.text(minutesTillTrain);
 
 
 
 
-    Row = Row.append(name).append(dest).append(arriv).append(freq).append(nextT);
+    Row = Row.append(name).append(dest).append(freq).append(arriv).append(nextTill);
           
 
       
